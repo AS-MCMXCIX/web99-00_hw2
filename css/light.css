@@ -43,7 +43,6 @@
     height: 100%;
     background-color: transparent;
     text-align: center;
-/ / padding: 16 px 16 px;
     text-decoration: none;
     font-size: 300%;
     outline: none;
@@ -79,6 +78,7 @@
 }
 
 .botnav {
+    height: 10vh;
     width: 100%;
     display: table;
     justify-content: center;
@@ -95,7 +95,7 @@
     text-align: center;
     vertical-align: middle;
     padding: 5px 5px;
-    height: 10vh;
+    height: 100%;
     display: table-cell;
     width: 25%;
     text-decoration: none;
@@ -132,6 +132,7 @@
 }
 
 .side-bar {
+    z-index: 1;
     color: white;
     direction: rtl;
     background-color: #186AA5;
@@ -161,55 +162,6 @@ ul#menu li {
     display: inline;
 }
 
-.items-list {
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-y: scroll;
-    color: white;
-    font-family: Sahel;
-    background-color: blueviolet;
-    width: calc(100vw - 300px);
-    height: 84vh;
-}
-
-.items-list li ul {
-    display: inline;
-}
-
-.items-list::-webkit-scrollbar {
-    transform: rotateX(180deg);
-    width: 12px;
-    height: 12px;
-    cursor: grab;
-    background-color: #E8EFF7;
-}
-
-.items-list::-webkit-scrollbar-corner {
-    background-color: black;
-}
-
-.items-list::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: #4285F4;
-}
-
-.items-list::-webkit-scrollbar-thumb:horizontal:active {
-    background-color: red;
-}
-
-.items-list::-webkit-scrollbar-thumb:vertical:active {
-    background-color: red;
-}
-
-.item:hover {
-    box-shadow: 0 0 1px 2px black;
-    transition: box-shadow 0.4s linear;
-}
-
 html, body {
     overflow: hidden;
     height: 100%;
@@ -231,53 +183,15 @@ html, body {
     .header_above_600px {
         display: block;
     }
-
-    i {
-        flex: 1 0 31%;
-        max-width: 31%;
-        max-height: 200px;
-        margin: 1% 0 0 1%;
-        background-color: red;
-        visibility: hidden;
-    }
-
-    .item {
-        text-align: right;
-        flex: 1 0 31%;
-        max-width: 31%;
-        max-height: 200px;
-        margin: 1% 0 0 1%;
-        background-color: azure;
-        list-style-type: none;
-    }
 }
 
-@media screen and (min-device-width: 1000px) {
-    i {
-        flex: 1 0 21%;
-        max-width: 21%;
-        max-height: 200px;
-        margin: 1% 0 0 1%;
-        background-color: red;
-        visibility: hidden;
-    }
-
-    .item {
-        text-align: center;
-        flex: 1 0 21%;
-        max-width: 21%;
-        max-height: 200px;
-        margin: 1% 0 0 1%;
-        background-color: azure;
-        list-style-type: none;
-    }
-}
 @media screen and (min-device-width: 600px) {
     #botnav{
         display: none;
     }
 }
 .side-bar-active {
+    z-index: 1;
     position: absolute;
     color: white;
     direction: rtl;
@@ -302,21 +216,6 @@ html, body {
         float: left;
         -webkit-transition: .4s;
         transition: .4s;
-    }
-
-    .items-list {
-        background-color: #95b1b3;
-    }
-
-    .item {
-        text-align: center;
-        flex: 1 0 80%;
-        max-width: 80%;
-        height: 50%;
-        max-height: 50%;
-        margin: 1% 0 0 1%;
-        background-color: #E8EFF7;
-        list-style-type: none;
     }
 
     .header_below_600px {

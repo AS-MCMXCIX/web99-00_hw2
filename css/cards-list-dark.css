@@ -1,0 +1,120 @@
+:root {
+    --list-bck-color: dimgray;
+    --list-scroll-bck-color: #E8EFF7;
+    --list-scroll-crn-color: black;
+    --list-scroll-thumb-color: #44c553;
+    --list-scroll-thumb-active-color: red;
+    --card-bck-color: gray;
+}
+
+
+.cards-list {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: scroll;
+    color: red;
+    font-family: Sahel;
+    background-color: var(--list-bck-color);
+    width: calc(100vw - 300px);
+    height: 89vh;
+}
+
+.cards-list li ul {
+    display: inline;
+}
+
+.cards-list::-webkit-scrollbar {
+    transform: rotateX(180deg);
+    width: 12px;
+    height: 12px;
+    cursor: grab;
+    background-color: var(--list-scroll-bck-color);
+}
+
+.cards-list::-webkit-scrollbar-corner {
+    background-color: var(--list-scroll-crn-color);
+}
+
+.cards-list::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--list-scroll-thumb-color);
+}
+
+.cards-list::-webkit-scrollbar-thumb:horizontal:active {
+    background-color: var(--list-scroll-thumb-active-color);
+}
+
+.cards-list::-webkit-scrollbar-thumb:vertical:active {
+    background-color: var(--list-scroll-thumb-active-color);
+}
+
+.card:hover {
+    box-shadow: 0 0 1px 2px black;
+    transition: box-shadow 0.4s linear;
+}
+
+@media screen and (min-device-width: 600px) and (max-device-width: 1000px) {
+    i {
+        flex: 1 0 31%;
+        max-width: 31%;
+        max-height: 200px;
+        margin: 1% 0 0 1%;
+        background-color: red;
+        visibility: hidden;
+    }
+
+    .card {
+        text-align: right;
+        flex: 1 0 31%;
+        max-width: 31%;
+        max-height: 200px;
+        margin: 1% 0 0 1%;
+        background-color: var(--card-bck-color);
+        list-style-type: none;
+    }
+}
+
+
+@media screen and (min-device-width: 1000px) {
+    i {
+        flex: 1 0 21%;
+        max-width: 21%;
+        max-height: 200px;
+        margin: 1% 0 0 1%;
+        background-color: red;
+        visibility: hidden;
+    }
+
+    .card {
+        text-align: center;
+        flex: 1 0 21%;
+        max-width: 21%;
+        max-height: 200px;
+        margin: 1% 0 0 1%;
+        background-color: var(--card-bck-color);
+        list-style-type: none;
+    }
+}
+
+@media screen and (max-device-width: 599px) {
+
+    .cards-list {
+        background-color: var(--list-bck-color);
+        height: 79vh;
+    }
+
+    .card {
+        text-align: center;
+        flex: 1 0 80%;
+        max-width: 80%;
+        height: 50%;
+        max-height: 50%;
+        margin: 1% 0 0 1%;
+        background-color: var(--card-bck-color);
+        list-style-type: none;
+    }
+}
