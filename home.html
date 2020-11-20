@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/light.css">
+    <link rel="stylesheet" href="css/switch-button.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+
+    </style>
+</head>
+<body class="page-background">
+<header class="topnav header_above_600px">
+    <div>
+        <span>       </span>
+        <button id="signUp" href="#register">ثبت نام</button>
+        <span>       </span>
+        <button id="signIn" href="#news">ورود</button>
+    </div>
+    <div id="rightButtons" class="topnav-right">
+        <a id="data" href="#home">داده ها</a>
+        <a id="home" class="active" href="#cards-list">خانه</a>
+        <span class="logo-span">       </span>
+        <img src="files/blue_logo_175x75.png" alt="None">
+    </div>
+</header>
+
+<header class="topnav2 header_below_600px">
+    <button onmouseover="menuButtonAction()" id="menu-button" href="#menu">&#x2630;</button>
+    <img src="files/blue_logo_175x75.png" alt="None"
+         style="height:100%;width: 30%;padding:1% 0% 1% 0;margin-right: 5%;float: right">
+</header>
+<footer id="botnav" class="botnav">
+    <a id="signUp2" href="#register">ثبت نام</a>
+    <a id="signIn2" href="#news">ورود</a>
+    <a id="data2" href="#data">داده ها</a>
+    <a id="home2" class="active" href="#home">خانه</a>
+</footer>
+<div id="side-bar" class="side-bar">
+    <br>
+    <br>
+    <h2 class="team-members">&nbsp;&nbsp;اعضای تیم</h2>
+    <br>
+    <ul class="team-members" style="direction: rtl">
+        <li>
+            &nbsp;عضو اول
+        </li>
+        <li>
+            &nbsp;عضو اول
+        </li>
+        <li>
+            &nbsp;عضو اول
+        </li>
+    </ul>
+    <br>
+    <p style="font-size: 28px">&emsp;تنظیمات</p>
+    <br>
+    <ul id="menu" style="list-style-type: none;padding-right: 0">
+        <li style="font-size: 23px;">&emsp;حالت شب&emsp;&emsp;&emsp;&emsp;</li>
+        <li>
+            <label class="switch">
+                <input onclick="dark_mode()" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </li>
+    </ul>
+</div>
+<ul id="cards-list" class="items-list">
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="item"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+
+    <i aria-hidden="true"></i>
+    <i aria-hidden="true"></i>
+    <i aria-hidden="true"></i>
+</ul>
+<script>
+    window.addEventListener('resize', function () {
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        if (width > 600) {
+            resetMenu();
+        }
+    });
+
+    function menuButtonAction() {
+        let btn = document.getElementById("menu-button");
+        let menu = document.getElementById("side-bar");
+        if (btn.innerText === '\u2630') {
+            btn.innerText = '\u2573';
+        } else {
+            btn.innerText = '\u2630';
+        }
+        menu.classList.toggle('side-bar-active');
+        menu.classList.toggle('side-bar');
+        console.log(menu.classList.toString());
+    }
+
+    function resetMenu() {
+        let menu = document.getElementById("side-bar");
+        menu.className = 'side-bar';
+    }
+</script>
+<script>
+    function dark_mode() {
+        //window.location.href = "https://www.google.com";
+        var theme = document.getElementsByTagName('link')[0];
+        if (theme.getAttribute('href') === 'css/light.css') {
+            theme.setAttribute('href', 'css/dark.css');
+        } else {
+            theme.setAttribute('href', 'css/light.css');
+        }
+    }
+</script>
+<script>
+    var btnContainer = document.getElementById("rightButtons");
+    // Get all buttons with class="btn" inside the container
+    console.log(window.location.href);
+    var btns = btnContainer.getElementsByClassName("topnav-right");
+    // Loop through the buttons and add the active class to the current/clicked button
+    console.log(btns.toString());
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+</script>
+</body>
+</html>

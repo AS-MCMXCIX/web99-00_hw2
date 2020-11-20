@@ -1,0 +1,196 @@
+.topnav {
+    background-color: black;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px;
+}
+
+.topnav #signUp {
+    margin-top: 15px;
+    float: left;
+    border-color: #44c553;
+    color: black;
+    width: 100px;
+    background-color: #44c553;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    outline: none;
+    box-shadow: none;
+}
+
+.topnav #signIn {
+    width: 100px;
+    margin-top: 15px;
+    float: left;
+    border-color: #44c553;
+    color: black;
+    background-color: #44c553;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #44c553;
+    text-align: center;
+    background-color: #aaffb3;
+    padding: 23px 16px;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    color: black;
+}
+
+.topnav span {
+    float: left;
+}
+
+/* Change the color of links on hover */
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    border-style: solid;
+    border-width: 0px 0px 5px 0px;
+    border-color: #44c553;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+    float: right;
+}
+
+.logo-span:before {
+    content: " ";
+    display: inline-block;
+    width: 125px;
+}
+
+.side-bar {
+    color: #44c553;
+    direction: rtl;
+    font-family: Sahel;
+    background-color: #363739;
+    height: 100%;
+    width: 300px;
+    float: right
+}
+
+.team-members {
+    font-family: Sahel;
+    color: #44c553;
+    text-align: right
+}
+
+.page-background{
+    background-color: #242426;
+}
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+span:before {
+    content: " ";
+    display: inline-block;
+    width: 32px;
+}
+
+ul#menu li {
+    display: inline;
+}
+
+.items-list {
+    color: white;
+    background-color: dimgray;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    overflow-y: scroll;
+    font-family: Sahel;
+    width: calc(100% - 300px);
+    height: 84%;
+}
+
+.items-list li ul {
+    display: inline;
+}
+
+.items-list::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    cursor: grab;
+    background-color: #E8EFF7;
+}
+
+.items-list::-webkit-scrollbar-corner {
+    background-color: black;
+}
+
+.items-list::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #44c553;
+}
+
+.items-list::-webkit-scrollbar-thumb:horizontal:active {
+    background-color: red;
+}
+
+.items-list::-webkit-scrollbar-thumb:vertical:active {
+    background-color: red;
+}
+
+.item:hover{
+    box-shadow: 0px 0px 1px 2px azure;
+    transition: box-shadow 0.4s linear;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px){
+    i {
+        flex: 1 0 31%;
+        max-width: 31%;
+        max-height: 200px;
+        margin: 1% 0 0 1%;
+        visibility: hidden;
+    }
+    .item {
+        text-align: right;
+        flex: 1 0 31%;
+        max-width: 31%;
+        max-height: 200px;
+        margin: 1% 0 0 1%;
+        background-color: azure;
+        list-style-type: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    i {
+        flex: 1 0 21%;
+        max-width: 21%;
+        max-height: 200px;
+        margin: 1% 0 0 1%;
+        visibility: hidden;
+    }
+    .item {
+        text-align: center;
+        flex: 1 0 21%;
+        max-width: 21%;
+        max-height: 200px;
+        margin: 1% 0 0 1%;
+        background-color: azure;
+        list-style-type: none;
+    }
+}
+
+
