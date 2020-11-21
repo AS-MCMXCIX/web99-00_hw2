@@ -1,0 +1,62 @@
+:root{
+    --button-border-color: #186AA5;
+    --button-text-color: #186AA5;
+    --button-background-color: white;
+
+    --header-row-bck-color: #186AA5;
+    --header-row-text-color: white;
+    --header-row-border-color: white;
+
+    --row-bck-color-even: white;
+    --row-bck-color-odd: #EAF1F7;
+    --row-text-color: black;
+    --row-border-color: #D2E5F3;
+}
+
+#ranking-layout {
+    display: none;
+}
+
+#ranking-layout button {
+    position: absolute;
+    font-family: Sahel;
+    font-size: 133%;
+    top: 80vh;
+    border-color: var(--button-border-color);
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+    text-align: center;
+    padding: 0 2vw;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.ranking-header-row th {
+    background-color: var(--header-row-bck-color);
+    color: var(--header-row-text-color);
+    padding: 2vh 0px 2vh 0; /*trbl*/
+    text-align: center;
+    border-color: var(--header-row-border-color);
+    border-width: 1px;
+}
+
+.ranking-row {
+
+}
+
+.ranking-row td {
+    text-align: center;
+    padding: 2vh 0px 2vh 0; /*trbl*/
+    border-color: var(--row-border-color);
+    color: var(--row-text-color);
+    border-width: 1px;
+}
+
+.ranking-row:nth-child(odd) {
+    background-color: var(--row-bck-color-odd);
+}
+
+.ranking-row:nth-child(even) {
+    background-color: var(--row-bck-color-even);
+}

@@ -5,12 +5,10 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/light.css">
     <link rel="stylesheet" href="css/cards-list-light.css">
+    <link rel="stylesheet" href="css/ranking-list-light.css">
     <link rel="stylesheet" href="css/switch-button.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <style>
-
-    </style>
 </head>
 <body class="page-background">
 <header class="topnav header_above_600px">
@@ -21,8 +19,8 @@
         <button id="signIn" href="#news">ورود</button>
     </div>
     <div id="rightButtons" class="topnav-right">
-        <a id="data" href="#home">داده ها</a>
-        <a id="home" class="active" href="#cards-list">خانه</a>
+        <a id="data" href="#data" onclick="goToData()">داده ها</a>
+        <a id="home" class="active" href="#home" onclick="goToHome()">خانه</a>
         <span class="logo-span">       </span>
         <img src="files/blue_logo_175x75.png" alt="None">
     </div>
@@ -36,8 +34,8 @@
 <footer id="botnav" class="botnav">
     <a id="signUp2" href="#register">ثبت نام</a>
     <a id="signIn2" href="#news">ورود</a>
-    <a id="data2" href="#data">داده ها</a>
-    <a id="home2" class="active" href="#home">خانه</a>
+    <a id="data2" href="#data" onclick="goToData()">داده ها</a>
+    <a id="home2" class="active" href="#home" onclick="goToHome()">خانه</a>
 </footer>
 <div id="side-bar" class="side-bar">
     <br>
@@ -91,6 +89,51 @@
     <i aria-hidden="true"></i>
     <i aria-hidden="true"></i>
 </ul>
+<div id="ranking-layout">
+    <table id="ranking-table" dir="rtl" style="margin-left:5vw;margin-top:1vh;width: calc(90vw - 300px);">
+        <tr class="ranking-header-row">
+            <th>رتبه</th>
+            <th>نام تیم</th>
+            <th>نام دانشگاه و کشور</th>
+            <th>امتیاز</th>
+        </tr>
+        <tr class="ranking-row">
+            <td>رتبه</td>
+            <td>نام تیم</td>
+            <td>نام دانشگاه و کشور</td>
+            <td>امتیاز</td>
+        </tr>
+        <tr class="ranking-row">
+            <td>رتبه</td>
+            <td>نام تیم</td>
+            <td>نام دانشگاه و کشور</td>
+            <td>امتیاز</td>
+        </tr>
+    </table>
+    <button style="left: 5vw">قبلی</button>
+    <button style="float: right;right: calc(300px + 5vw);">بعدی</button>
+</div>
+<script>
+    let layout = document.getElementById('ranking-layout');
+    let table = document.getElementById('ranking-table');
+    let sp = table.rows.length;
+    let rows = 6;
+    let row_data = [3, 'تیم', 'دانشگاه', 50];
+    if (rows + sp <= 8) {
+        var btns = layout.getElementsByTagName('button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].style.display = 'none';
+        }
+    }
+    for (let i = sp; i < sp + rows; i++) {
+        let row = table.insertRow(i);
+        row.className = 'ranking-row';
+        for (let j = 0; j < 4; j++) {
+            let cell = row.insertCell(j);
+            cell.innerHTML = row_data[j];
+        }
+    }
+</script>
 <script>
     let btn = document.getElementById("menu-button");
     let sidebarActive = false;
@@ -126,8 +169,48 @@
     }
 </script>
 <script>
-    let light_styles = ["light.css", "cards-list-light.css"];
-    let dark_styles = ["dark.css", "cards-list-dark.css"];
+    let activePage = "home";
+    let activeLayout = document.getElementById('cards-list');
+
+    function setActivePageButton(btn) {
+        if (btn.id !== activePage) {
+            btn.classList.add("active");
+        }
+    }
+
+    function setInactivePageButton(btn) {
+        btn.classList.remove("active");
+    }
+
+    function goToData() {
+        if (activePage !== "data") {
+            activeLayout.style.display = 'none';
+            activeLayout = document.getElementById("ranking-layout");
+            activeLayout.style.display = 'block';
+            setInactivePageButton(document.getElementById(activePage));
+            setInactivePageButton(document.getElementById(activePage + "2"));
+            setActivePageButton(document.getElementById("data"));
+            setActivePageButton(document.getElementById("data2"));
+            activePage = "data";
+        }
+    }
+
+    function goToHome() {
+        if (activePage !== "home") {
+            activeLayout.style.display = 'none';
+            activeLayout = document.getElementById("cards-list");
+            activeLayout.style.display = 'flex';
+            setInactivePageButton(document.getElementById(activePage));
+            setInactivePageButton(document.getElementById(activePage + "2"));
+            setActivePageButton(document.getElementById("home"));
+            setActivePageButton(document.getElementById("home2"));
+            activePage = "home";
+        }
+    }
+</script>
+<script>
+    let light_styles = ["light.css", "cards-list-light.css", "ranking-list-light.css"];
+    let dark_styles = ["dark.css", "cards-list-dark.css", "ranking-list-dark.css"];
 
     function dark_mode() {
         //window.location.href = "https://www.google.com";
@@ -139,21 +222,6 @@
                 theme[i].setAttribute('href', 'css/' + light_styles[i]);
             }
         }
-    }
-</script>
-<script>
-    var btnContainer = document.getElementById("rightButtons");
-    // Get all buttons with class="btn" inside the container
-    console.log(window.location.href);
-    var btns = btnContainer.getElementsByClassName("topnav-right");
-    // Loop through the buttons and add the active class to the current/clicked button
-    console.log(btns.toString());
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
     }
 </script>
 </body>
