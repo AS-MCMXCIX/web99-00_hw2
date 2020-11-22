@@ -54,8 +54,8 @@
     background-color: var(--list-scroll-thumb-active-color);
 }
 
-.card:hover {
-    box-shadow: 0 0 1px 2px black;
+.d-card:hover {
+    box-shadow: 0 0 1px 2px gray;
     transition: box-shadow 0.4s linear;
 }
 
@@ -69,7 +69,7 @@
         visibility: hidden;
     }
 
-    .card {
+    .d-card {
         text-align: right;
         flex: 1 0 31%;
         max-width: 31%;
@@ -91,7 +91,7 @@
         visibility: hidden;
     }
 
-    .card {
+    .d-card {
         text-align: center;
         flex: 1 0 21%;
         max-width: 21%;
@@ -112,7 +112,7 @@
         width: 80vw;
     }
 
-    .card {
+    .d-card {
         text-align: center;
         flex: 1 0 80%;
         max-width: 60vw;

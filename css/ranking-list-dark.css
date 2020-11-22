@@ -23,7 +23,7 @@
     position: absolute;
     font-family: Sahel;
     font-size: 133%;
-    top: 80vh;
+    bottom: 20vh;
     border-color: var(--button-border-color);
     color: var(--button-text-color);
     background-color: var(--button-background-color);
@@ -67,7 +67,7 @@
 }
 
 .ranking-row:nth-child(odd) {
-    background-color: var(--row-bck-color-odd);
+    background-color: var(--row-bck-color-odd)!important;
 }
 
 .ranking-row:nth-child(even) {

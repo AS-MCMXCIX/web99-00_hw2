@@ -1,13 +1,14 @@
 :root {
-    --b600-button-border-color: #186AA5;
-    --b600-button-text-color: #186AA5;
-    --b600-button-background-color: white;
+    --b600-button-border-color: #44c553;
+    --b600-button-text-color: black;
+    --b600-button-background-color: #44c553;
 
-    --b600-row-bck-color-even: white;
-    --b600-row-bck-color-odd: #EAF1F7;
+    --b600-row-bck-color-even: #cae9cf;
+    --b600-row-bck-color-odd: #aaffb3;
     --b600-row-text-color: black;
     --b600-row-border-color: #D2E5F3;
-    --b600-list-bck-color: white;
+    --b600-list-bck-color: gray;
+    --s-card-background-color:#aaffb3;
 }
 
 .s-card-container {
@@ -26,7 +27,7 @@
     top: 13vh;
     left: 10vw;
     height: 70vh;
-    background-color: #0a53be;
+    background-color: black;
 }
 #ranking-layout-below-600px button{
     font-family: Sahel;
@@ -45,7 +46,7 @@
     margin: 1vh auto;
     width: 80%;
     position: center;
-    background-color: #E8EFF7;
+    background-color: var(--s-card-background-color);
 }
 .s-card th {
     float: right;

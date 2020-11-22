@@ -2,7 +2,7 @@
     --list-bck-color: dimgray;
     --list-scroll-bck-color: #E8EFF7;
     --list-scroll-crn-color: black;
-    --list-scroll-thumb-color: #44c553;
+    --list-scroll-thumb-color: #a6f5ac;
     --list-scroll-thumb-active-color: red;
     --card-bck-color: gray;
 }
@@ -54,7 +54,7 @@
     background-color: var(--list-scroll-thumb-active-color);
 }
 
-.card:hover {
+.d-card:hover {
     box-shadow: 0 0 1px 2px black;
     transition: box-shadow 0.4s linear;
 }
@@ -69,7 +69,7 @@
         visibility: hidden;
     }
 
-    .card {
+    .d-card {
         text-align: right;
         flex: 1 0 31%;
         max-width: 31%;
@@ -91,7 +91,7 @@
         visibility: hidden;
     }
 
-    .card {
+    .d-card {
         text-align: center;
         flex: 1 0 21%;
         max-width: 21%;
@@ -105,14 +105,17 @@
 @media screen and (max-device-width: 599px) {
 
     .cards-list {
+        top: 12vh;
+        left: 10vw;
         background-color: var(--list-bck-color);
-        height: 79vh;
+        height: 76vh;
+        width: 80vw;
     }
 
-    .card {
+    .d-card {
         text-align: center;
         flex: 1 0 80%;
-        max-width: 80%;
+        max-width: 60vw;
         height: 50%;
         max-height: 50%;
         margin: 1% 0 0 1%;

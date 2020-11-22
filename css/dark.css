@@ -1,5 +1,34 @@
+:root {
+    --topnav2-background-color: gray;
+
+    --topnav-background-color: gray;
+    --topnav-a-background-color: #a6f5ac;
+    --topnav-a-color: dodgerblue;
+    --topnav-a-border-color-active: #44c553;
+
+    --topnav-signup-color: dodgerblue;
+    --topnav-signup-background-color: #a6f5ac;
+    --topnav-signup-border-color: #186AA5;
+
+    --topnav-signin-color: #44c553;
+    --topnav-signin-background-color: black;
+    --topnav-signin-border-color: #44c553;
+
+    --botnav-background-color: gray;
+    --botnav-a-background-color: #a6f5ac;
+    --botnav-a-color: dodgerblue;
+    --botnav-a-border-color-active: #44c553;
+
+    --sidebar-background-color: #44c553;
+    --sidebar-color: #186AA5;
+
+    --team-members-color: blueviolet;
+
+    --menubutton-color: #a6f5ac;
+}
+
 .topnav {
-    background-color: #E8EFF7;
+    background-color: var(--topnav-background-color);
     overflow: hidden;
     display: block;
     width: 100vw;
@@ -12,10 +41,10 @@
 .topnav #signUp {
     margin-top: 15px;
     float: left;
-    border-color: #186AA5;
-    color: white;
+    border-color: var(--topnav-signup-border-color);
+    color: var(--topnav-signup-color);
     width: 100px;
-    background-color: #186AA5;
+    background-color: var(--topnav-signup-background-color);
     text-align: center;
     padding: 8px 16px;
     text-decoration: none;
@@ -26,11 +55,11 @@
 
 .topnav #signIn {
     width: 100px;
-    border-color: #186AA5;
+    border-color: var(--topnav-signin-border-color);
     margin-top: 15px;
     float: left;
-    color: #186AA5;
-    background-color: white;
+    color: var(--topnav-signin-color);
+    background-color: var(--topnav-signin-background-color);
     text-align: center;
     padding: 8px 16px;
     text-decoration: none;
@@ -44,7 +73,7 @@
     margin-left: 5%;
     float: left;
     border-color: transparent;
-    color: #186AA5;
+    color: var(--menubutton-color);
     height: 100%;
     background-color: transparent;
     text-align: center;
@@ -57,7 +86,8 @@
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
-    color: dodgerblue;
+    background-color: var(--topnav-a-background-color);
+    color: var(--topnav-a-color);
     text-align: center;
     padding: 23px 16px;
     display: block;
@@ -79,7 +109,7 @@
 .topnav a.active {
     border-style: solid;
     border-width: 0px 0px 5px 0px;
-    border-color: dodgerblue;
+    border-color: var(--topnav-a-border-color-active);
 }
 
 .botnav {
@@ -89,14 +119,15 @@
     justify-content: center;
     position: absolute;
     bottom: 0;
-    background-color: #E8EFF7;
+    background-color: var(--botnav-background-color);
     overflow: hidden;
     box-shadow: 10px 0px 0px 0px;
 }
 
 /* Style the links inside the navigation bar */
 .botnav a {
-    color: dodgerblue;
+    color: var(--botnav-a-color);
+    background-color: var(--botnav-a-background-color);
     text-align: center;
     vertical-align: middle;
     padding: 5px 5px;
@@ -117,7 +148,7 @@
 .botnav a.active {
     border-style: solid;
     border-width: 0px 0px 5px 0px;
-    border-color: dodgerblue;
+    border-color: var(--botnav-a-border-color-active);
 }
 
 /* Right-aligned section inside the top navigation */
@@ -126,8 +157,8 @@
 }
 
 .topnav2 {
-    background-color: #E8EFF7;
-    height: 10%;
+    background-color: var(--topnav2-background-color);
+    height: 13vh;
 }
 
 .logo-span:before {
@@ -139,9 +170,9 @@
 .side-bar {
     position: absolute;
     z-index: 1;
-    color: white;
+    color: var(--sidebar-color);
     direction: rtl;
-    background-color: #186AA5;
+    background-color: var(--sidebar-background-color);
     height: 100%;
     width: 300px;
     right: 0;
@@ -149,13 +180,13 @@
 }
 
 .team-members {
-    color: white;
+    color: var(--team-members-color);
     text-align: right;
     font-family: Sahel;
 }
 
 .page-background {
-    background-color: white;
+    background-color: #222424;
 }
 
 
@@ -182,6 +213,21 @@ html, body {
     display: block;
 }
 
+.side-bar-active {
+    z-index: 1;
+    position: absolute;
+    color: var(--sidebar-color);
+    direction: rtl;
+    height: 100%;
+    width: 40%;
+    float: left;
+    -webkit-transition: .4s;
+    transition: .4s;
+    left: 0;
+    top: 13vh;
+    background-color: var(--sidebar-background-color);
+}
+
 @media screen and (min-device-width: 600px) and (max-device-width: 1000px) {
     .below-600px {
         display: none !important;
@@ -193,23 +239,39 @@ html, body {
 }
 
 @media screen and (min-device-width: 600px) {
-    #botnav{
+    #botnav {
         display: none;
     }
 }
+
 @media screen and (max-device-width: 599px) {
     .side-bar {
         position: absolute;
-        top: 10vh;
-        color: white;
+        top: 13vh;
+        color: var(--sidebar-color);
         direction: rtl;
-        background-color: #186AA5;
-        height: 13vh;
+        background-color: var(--sidebar-background-color);
+        height: 100%;
         width: 40%;
         left: -40%;
         float: left;
         -webkit-transition: .4s;
         transition: .4s;
+    }
+
+    .side-bar-active {
+        z-index: 1;
+        position: absolute;
+        color: var(--sidebar-color);
+        direction: rtl;
+        height: 100%;
+        width: 40%;
+        float: left;
+        -webkit-transition: .4s;
+        transition: .4s;
+        left: 0;
+        top: 12vh;
+        background-color: var(--sidebar-background-color);
     }
 
     .below-600px {
@@ -221,20 +283,3 @@ html, body {
     }
 
 }
-.side-bar-active {
-    z-index: 1;
-    position: absolute;
-    color: white;
-    direction: rtl;
-    height: 100%;
-    width: 40%;
-    float: left;
-    -webkit-transition: .4s;
-    transition: .4s;
-    left: 0;
-    top: 13vh;
-    background-color: #186AA5;
-}
-
-
-

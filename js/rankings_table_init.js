@@ -61,7 +61,6 @@ for (let i = 0; i < rows_count; i++) {
 }
 
 let div = document.getElementById('ranking-cards-container');
-console.log(div.className);
 for (let i = 0; i < rows_count; i++) {
     let row = table_data[i];
     let table = createSCard([['نام تیم', row[table_meta2[0]]], ['امتیاز', row[table_meta2[1]]],

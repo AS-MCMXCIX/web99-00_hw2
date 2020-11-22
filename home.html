@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/ranking-list-light.css">
     <link rel="stylesheet" href="css/ranking-list-below-600px-light.css">
     <link rel="stylesheet" href="css/switch-button.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body class="page-background">
@@ -92,23 +91,23 @@
     </ul>
 </div>
 <ul id="cards-list" class="cards-list">
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
-    <div class="card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
+    <div class="d-card"><img style="max-width: 100%;max-height: 100%;" src="files/blue_logo_200x200.png"></div>
 
     <i aria-hidden="true"></i>
     <i aria-hidden="true"></i>
@@ -202,13 +201,14 @@
     }
 </script>
 <script>
-    let light_styles = ["light.css", "cards-list-light.css", "ranking-list-light.css"];
-    let dark_styles = ["dark.css", "cards-list-dark.css", "ranking-list-dark.css"];
+    let light_styles = ["light.css", "cards-list-light.css", "ranking-list-light.css", "ranking-list-below-600px-light.css"];
+    let dark_styles = ["dark.css", "cards-list-dark.css", "ranking-list-dark.css", "ranking-list-below-600px-dark.css"];
 
     function dark_mode() {
         //window.location.href = "https://www.google.com";
         let theme = document.getElementsByTagName('link');
         for (let i = 0; i < light_styles.length; i++) {
+            console.log(theme[i].getAttribute('href'));
             if (theme[i].getAttribute('href') === 'css/' + light_styles[i]) {
                 theme[i].setAttribute('href', 'css/' + dark_styles[i]);
             } else {
