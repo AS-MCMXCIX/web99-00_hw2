@@ -1,4 +1,4 @@
-:root{
+:root {
     --button-border-color: #186AA5;
     --button-text-color: #186AA5;
     --button-background-color: white;
@@ -13,15 +13,17 @@
     --row-border-color: #D2E5F3;
 }
 
-#ranking-layout {
+#ranking-layout-above-600px {
+    position: absolute;
+    top: 15vh;
     display: none;
 }
 
-#ranking-layout button {
+#ranking-layout-above-600px button {
     position: absolute;
     font-family: Sahel;
     font-size: 133%;
-    top: 80vh;
+    bottom: 20vh;
     border-color: var(--button-border-color);
     color: var(--button-text-color);
     background-color: var(--button-background-color);
@@ -30,6 +32,17 @@
     text-decoration: none;
     outline: none;
     box-shadow: none;
+}
+
+#ranking-table-above-600px {
+    margin-left: 5vw;
+    margin-top: 1vh;
+    width: calc(90vw - 300px);
+    max-height: 50vh;
+}
+
+#ranking-table-container{
+    max-height: 90vh;
 }
 
 .ranking-header-row th {

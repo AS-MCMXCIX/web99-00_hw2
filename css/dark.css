@@ -1,37 +1,42 @@
 .topnav {
-    background-color: black;
+    background-color: #E8EFF7;
     overflow: hidden;
-    box-shadow: 0px 0px 10px 0px #aaffb3;
+    display: block;
+    width: 100vw;
+    box-shadow: 0px 0px 10px 0px;
+    position: absolute;
+    top: 0;
+    z-index: 3;
 }
 
 .topnav #signUp {
     margin-top: 15px;
     float: left;
+    border-color: #186AA5;
+    color: white;
     width: 100px;
+    background-color: #186AA5;
     text-align: center;
     padding: 8px 16px;
     text-decoration: none;
     font-size: 17px;
     outline: none;
     box-shadow: none;
-    border-color: #44c553;
-    color: black;
-    background-color: #44c553;
 }
 
 .topnav #signIn {
     width: 100px;
+    border-color: #186AA5;
     margin-top: 15px;
     float: left;
+    color: #186AA5;
+    background-color: white;
     text-align: center;
     padding: 8px 16px;
     text-decoration: none;
     font-size: 17px;
     outline: none;
     box-shadow: none;
-    border-color: #44c553;
-    color: black;
-    background-color: #44c553;
 }
 
 #menu-button {
@@ -39,7 +44,7 @@
     margin-left: 5%;
     float: left;
     border-color: transparent;
-    color: #44c553;
+    color: #186AA5;
     height: 100%;
     background-color: transparent;
     text-align: center;
@@ -52,14 +57,13 @@
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
+    color: dodgerblue;
     text-align: center;
     padding: 23px 16px;
     display: block;
     height: 100%;
     text-decoration: none;
     font-size: 17px;
-    background-color: #aaffb3;
-    color: #44c553;
 }
 
 .topnav span {
@@ -75,7 +79,7 @@
 .topnav a.active {
     border-style: solid;
     border-width: 0px 0px 5px 0px;
-    border-color: #44c553;
+    border-color: dodgerblue;
 }
 
 .botnav {
@@ -85,24 +89,23 @@
     justify-content: center;
     position: absolute;
     bottom: 0;
-    background-color: black;
+    background-color: #E8EFF7;
     overflow: hidden;
-    box-shadow: 10px 0px 0px 0px #aaffb3;
+    box-shadow: 10px 0px 0px 0px;
 }
 
 /* Style the links inside the navigation bar */
 .botnav a {
+    color: dodgerblue;
     text-align: center;
     vertical-align: middle;
     padding: 5px 5px;
+    height: 100%;
     display: table-cell;
     width: 25%;
-    height: 100%;
     text-decoration: none;
     font-size: 250%;
     font-family: Sahel;
-    background-color: #aaffb3;
-    color: #44c553;
 }
 
 /* Change the color of links on hover */
@@ -114,7 +117,7 @@
 .botnav a.active {
     border-style: solid;
     border-width: 0px 0px 5px 0px;
-    border-color: #44c553;
+    border-color: dodgerblue;
 }
 
 /* Right-aligned section inside the top navigation */
@@ -134,23 +137,25 @@
 }
 
 .side-bar {
+    position: absolute;
     z-index: 1;
+    color: white;
     direction: rtl;
+    background-color: #186AA5;
     height: 100%;
     width: 300px;
-    float: right;
-    color: #44c553;
-    background-color: #363739;
+    right: 0;
+    top: 10vh;
 }
 
 .team-members {
+    color: white;
     text-align: right;
     font-family: Sahel;
-    color: #44c553;
 }
 
 .page-background {
-    background-color: #242426;
+    background-color: white;
 }
 
 
@@ -169,39 +174,24 @@ html, body {
     height: 100%;
 }
 
-.header_below_600px {
+.below-600px {
     display: none;
-    background-color: black;
 }
 
-.header_above_600px {
+.above-600px {
     display: block;
-    background-color: black;
 }
 
 @media screen and (min-device-width: 600px) and (max-device-width: 1000px) {
-    .header_below_600px {
-        display: none;
+    .below-600px {
+        display: none !important;
     }
 
-    .header_above_600px {
-        display: block;
+    .above-600px {
+        display: block !important;
     }
 }
 
-.side-bar-active {
-    z-index: 1;
-    position: absolute;
-    color: #44c553;
-    direction: rtl;
-    height: 100%;
-    width: 40%;
-    float: left;
-    -webkit-transition: .4s;
-    transition: .4s;
-    left: 0;
-    background-color: #363739;
-}
 @media screen and (min-device-width: 600px) {
     #botnav{
         display: none;
@@ -210,23 +200,41 @@ html, body {
 @media screen and (max-device-width: 599px) {
     .side-bar {
         position: absolute;
-        color: #44c553;
+        top: 10vh;
+        color: white;
         direction: rtl;
-        background-color: #363739;
-        height: 100%;
+        background-color: #186AA5;
+        height: 13vh;
         width: 40%;
         left: -40%;
         float: left;
         -webkit-transition: .4s;
         transition: .4s;
     }
-    .header_below_600px {
-        display: block;
+
+    .below-600px {
+        display: block !important;
     }
 
-    .header_above_600px {
-        display: none;
+    .above-600px {
+        display: none !important;
     }
 
 }
+.side-bar-active {
+    z-index: 1;
+    position: absolute;
+    color: white;
+    direction: rtl;
+    height: 100%;
+    width: 40%;
+    float: left;
+    -webkit-transition: .4s;
+    transition: .4s;
+    left: 0;
+    top: 13vh;
+    background-color: #186AA5;
+}
+
+
 

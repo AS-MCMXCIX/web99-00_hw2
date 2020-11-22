@@ -1,7 +1,12 @@
 .topnav {
     background-color: #E8EFF7;
     overflow: hidden;
+    display: block;
+    width: 100vw;
     box-shadow: 0px 0px 10px 0px;
+    position: absolute;
+    top: 0;
+    z-index: 3;
 }
 
 .topnav #signUp {
@@ -122,7 +127,7 @@
 
 .topnav2 {
     background-color: #E8EFF7;
-    height: 10%;
+    height: 13vh;
 }
 
 .logo-span:before {
@@ -132,13 +137,15 @@
 }
 
 .side-bar {
+    position: absolute;
     z-index: 1;
     color: white;
     direction: rtl;
     background-color: #186AA5;
     height: 100%;
     width: 300px;
-    float: right
+    right: 0;
+    top: 10vh;
 }
 
 .team-members {
@@ -167,28 +174,12 @@ html, body {
     height: 100%;
 }
 
-.header_below_600px {
+.below-600px {
     display: none;
 }
 
-.header_above_600px {
+.above-600px {
     display: block;
-}
-
-@media screen and (min-device-width: 600px) and (max-device-width: 1000px) {
-    .header_below_600px {
-        display: none;
-    }
-
-    .header_above_600px {
-        display: block;
-    }
-}
-
-@media screen and (min-device-width: 600px) {
-    #botnav{
-        display: none;
-    }
 }
 .side-bar-active {
     z-index: 1;
@@ -201,12 +192,29 @@ html, body {
     -webkit-transition: .4s;
     transition: .4s;
     left: 0;
+    top: 13vh;
     background-color: #186AA5;
 }
 
+@media screen and (min-device-width: 600px) and (max-device-width: 1000px) {
+    .below-600px {
+        display: none !important;
+    }
+
+    .above-600px {
+        display: block !important;
+    }
+}
+
+@media screen and (min-device-width: 600px) {
+    #botnav{
+        display: none;
+    }
+}
 @media screen and (max-device-width: 599px) {
     .side-bar {
         position: absolute;
+        top: 13vh;
         color: white;
         direction: rtl;
         background-color: #186AA5;
@@ -218,13 +226,31 @@ html, body {
         transition: .4s;
     }
 
-    .header_below_600px {
-        display: block;
+    .side-bar-active {
+        z-index: 1;
+        position: absolute;
+        color: white;
+        direction: rtl;
+        height: 100%;
+        width: 40%;
+        float: left;
+        -webkit-transition: .4s;
+        transition: .4s;
+        left: 0;
+        top: 13vh;
+        background-color: #186AA5;
     }
 
-    .header_above_600px {
-        display: none;
+    .below-600px {
+        display: block !important;
+    }
+
+    .above-600px {
+        display: none !important;
     }
 
 }
+
+
+
 

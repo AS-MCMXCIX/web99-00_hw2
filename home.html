@@ -6,38 +6,63 @@
     <link rel="stylesheet" href="css/light.css">
     <link rel="stylesheet" href="css/cards-list-light.css">
     <link rel="stylesheet" href="css/ranking-list-light.css">
+    <link rel="stylesheet" href="css/ranking-list-below-600px-light.css">
     <link rel="stylesheet" href="css/switch-button.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body class="page-background">
-<header class="topnav header_above_600px">
-    <div>
-        <span>       </span>
-        <button id="signUp" href="#register">ثبت نام</button>
-        <span>       </span>
-        <button id="signIn" href="#news">ورود</button>
-    </div>
-    <div id="rightButtons" class="topnav-right">
-        <a id="data" href="#data" onclick="goToData()">داده ها</a>
-        <a id="home" class="active" href="#home" onclick="goToHome()">خانه</a>
-        <span class="logo-span">       </span>
-        <img src="files/blue_logo_175x75.png" alt="None">
-    </div>
-</header>
 
-<header class="topnav2 header_below_600px">
-    <button onmouseover="menuButtonAction()" id="menu-button" href="#menu">&#x2630;</button>
-    <img src="files/blue_logo_175x75.png" alt="None"
-         style="height:100%;width: 30%;padding:1% 0% 1% 0;margin-right: 5%;float: right">
-</header>
-<footer id="botnav" class="botnav">
-    <a id="signUp2" href="#register">ثبت نام</a>
-    <a id="signIn2" href="#news">ورود</a>
-    <a id="data2" href="#data" onclick="goToData()">داده ها</a>
-    <a id="home2" class="active" href="#home" onclick="goToHome()">خانه</a>
-</footer>
-<div id="side-bar" class="side-bar">
+<div class="above-600px">
+    <header class="topnav">
+        <div>
+            <span>       </span>
+            <button id="signUp" href="#register">ثبت نام</button>
+            <span>       </span>
+            <button id="signIn" href="#news">ورود</button>
+        </div>
+        <div id="rightButtons" class="topnav-right">
+            <a id="data" href="#data" onclick="goToData()">داده ها</a>
+            <a id="home" class="active" href="#home" onclick="goToHome()">خانه</a>
+            <span class="logo-span">       </span>
+            <img src="files/blue_logo_175x75.png" alt="None">
+        </div>
+    </header>
+    <div id="ranking-layout-above-600px">
+        <div id="ranking-table-container">
+            <table id="ranking-table-above-600px" dir="rtl">
+                <tr class="ranking-header-row">
+                    <th>رتبه</th>
+                    <th>نام تیم</th>
+                    <th>نام دانشگاه و کشور</th>
+                    <th>امتیاز</th>
+                </tr>
+            </table>
+        </div>
+        <button style="left: 5vw">قبلی</button>
+        <button style="right: 0">بعدی</button>
+    </div>
+</div>
+
+<div class="below-600px">
+    <header class="topnav2">
+        <button onmouseover="menuButtonAction()" id="menu-button" href="#menu">&#x2630;</button>
+        <img src="files/blue_logo_175x75.png" alt="None"
+             style="height:100%;width: 30%;padding:1% 0% 1% 0;margin-right: 5%;float: right">
+    </header>
+    <footer id="botnav" class="botnav">
+        <a id="signUp2" href="#register">ثبت نام</a>
+        <a id="signIn2" href="#news">ورود</a>
+        <a id="data2" href="#data" onclick="goToData()">داده ها</a>
+        <a id="home2" class="active" href="#home" onclick="goToHome()">خانه</a>
+    </footer>
+    <div id="ranking-layout-below-600px">
+        <div id="ranking-cards-container" class="s-card-container"></div>
+        <button style="left: 5vw">قبلی</button>
+        <button style="float: right;right: 5vw">بعدی</button>
+    </div>
+</div>
+<div id="side-bar" class="side-bar" style="position: absolute;">
     <br>
     <br>
     <h2 class="team-members">&nbsp;&nbsp;اعضای تیم</h2>
@@ -89,51 +114,7 @@
     <i aria-hidden="true"></i>
     <i aria-hidden="true"></i>
 </ul>
-<div id="ranking-layout">
-    <table id="ranking-table" dir="rtl" style="margin-left:5vw;margin-top:1vh;width: calc(90vw - 300px);">
-        <tr class="ranking-header-row">
-            <th>رتبه</th>
-            <th>نام تیم</th>
-            <th>نام دانشگاه و کشور</th>
-            <th>امتیاز</th>
-        </tr>
-        <tr class="ranking-row">
-            <td>رتبه</td>
-            <td>نام تیم</td>
-            <td>نام دانشگاه و کشور</td>
-            <td>امتیاز</td>
-        </tr>
-        <tr class="ranking-row">
-            <td>رتبه</td>
-            <td>نام تیم</td>
-            <td>نام دانشگاه و کشور</td>
-            <td>امتیاز</td>
-        </tr>
-    </table>
-    <button style="left: 5vw">قبلی</button>
-    <button style="float: right;right: calc(300px + 5vw);">بعدی</button>
-</div>
-<script>
-    let layout = document.getElementById('ranking-layout');
-    let table = document.getElementById('ranking-table');
-    let sp = table.rows.length;
-    let rows = 6;
-    let row_data = [3, 'تیم', 'دانشگاه', 50];
-    if (rows + sp <= 8) {
-        var btns = layout.getElementsByTagName('button');
-        for (let i = 0; i < btns.length; i++) {
-            btns[i].style.display = 'none';
-        }
-    }
-    for (let i = sp; i < sp + rows; i++) {
-        let row = table.insertRow(i);
-        row.className = 'ranking-row';
-        for (let j = 0; j < 4; j++) {
-            let cell = row.insertCell(j);
-            cell.innerHTML = row_data[j];
-        }
-    }
-</script>
+<script src="js/rankings_table_init.js"></script>
 <script>
     let btn = document.getElementById("menu-button");
     let sidebarActive = false;
@@ -185,7 +166,8 @@
     function goToData() {
         if (activePage !== "data") {
             activeLayout.style.display = 'none';
-            activeLayout = document.getElementById("ranking-layout");
+            document.getElementById("ranking-layout-above-600px").style.display = 'block';
+            activeLayout = document.getElementById("ranking-layout-below-600px");
             activeLayout.style.display = 'block';
             setInactivePageButton(document.getElementById(activePage));
             setInactivePageButton(document.getElementById(activePage + "2"));

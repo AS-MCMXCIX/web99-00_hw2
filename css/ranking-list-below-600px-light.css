@@ -1,0 +1,65 @@
+:root {
+    --button-border-color: #186AA5;
+    --button-text-color: #186AA5;
+    --button-background-color: white;
+
+    --header-row-bck-color: #186AA5;
+    --header-row-text-color: white;
+    --header-row-border-color: white;
+
+    --row-bck-color-even: white;
+    --row-bck-color-odd: #EAF1F7;
+    --row-text-color: black;
+    --row-border-color: #D2E5F3;
+    --list-bck-color: white;
+}
+
+.s-card-container {
+    justify-content: center;
+    display: block;
+    margin: 1vh auto 1vh auto;
+    overflow-y: scroll;
+    font-family: Sahel;
+    font-size: 3vw;
+    background-color: var(--list-bck-color);
+    height: 100%;
+}
+#ranking-layout-below-600px{
+    position: absolute;
+    display: none;
+    top: 12vh;
+    left: 10vw;
+    height: 70vh;
+    background-color: #0a53be;
+}
+#ranking-layout-below-600px button{
+    font-family: Sahel;
+    font-size: 175%;
+    border-color: var(--button-border-color);
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+    text-align: center;
+    padding: 0.5vh 2vw;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+.s-card {
+    flex: 1 0 80%;
+    margin: 1vh auto;
+    width: 80%;
+    position: center;
+    background-color: #E8EFF7;
+}
+.s-card th {
+    float: right;
+    padding: 2vh 1vw 2vh 1vw;
+    color: #186AA5;
+}
+
+.s-card td {
+    color: #186AA5;
+    float: left;
+    padding: 2vh 1vw 2vh 1vw;
+    max-width: 50%;
+}
