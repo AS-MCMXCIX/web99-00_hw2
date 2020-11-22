@@ -17,9 +17,9 @@
     <header class="topnav">
         <div>
             <span>       </span>
-            <button id="signUp" href="#register">ثبت نام</button>
+            <button id="signUp" onclick="goToSignup()">ثبت نام</button>
             <span>       </span>
-            <button id="signIn" href="#news">ورود</button>
+            <button id="signIn" onclick="goToSignIn()">ورود</button>
         </div>
         <div id="rightButtons" class="topnav-right">
             <a id="data" href="#data" onclick="goToData()">داده ها</a>
@@ -161,6 +161,17 @@
 
     function setInactivePageButton(btn) {
         btn.classList.remove("active");
+    }
+
+    function goToSignup() {
+        var b = 'signUp';
+        var url = 'login.html?state=' + encodeURIComponent(b);
+        document.location.href = url;
+    }
+    function goToSignIn() {
+        var b = 'signIn';
+        var url = 'login.html?state=' + encodeURIComponent(b);
+        document.location.href = url;
     }
 
     function goToData() {
