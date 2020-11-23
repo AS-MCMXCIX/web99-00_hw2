@@ -8,9 +8,11 @@
 <body>
 <div class="top-nav">
     <a class="go-home" href="home.html">&lt; بازگشت به خانه</a>
-    <img style="float: right" src="files/blue_logo_175x75.png" alt="None">
+    <img style="position: absolute;top: 50%;right:0;height: 100%;width: 40%;max-width: 300px;transform: translate(0, -40%)"
+         src="files/blue_logo_175x75.png"
+         alt="None">
 </div>
-<div class="center">
+<div class="center above-600px">
     <div style="position: relative">
         <picture>
             <source media="(min-width:1000px)" srcset="files/signup-highQ-light.jpg">
@@ -21,16 +23,10 @@
             Why SignUp Now When You Can SignUp Later???
         </div>
     </div>
-    <div style="text-align: center;
-            height: 50vh;
-            background-color: white;
-            width: 33%;
-            display: flex;
-            justify-content: center;
-            position: inherit;
-            right: 0;
-            top: 0;">
-        <div style="position: inherit;text-align: center;background-color: gray;width: 100%;">
+</div>
+<div class="supInFormContainer">
+    <div class="supInForm">
+        <div style="position: absolute;text-align: center;background-color: gray;width: 100%;height: 12%">
             <button id="signIn" onclick="goToSection('signIn')">ورود
             </button>
             <button id="signUp" class="active" onclick="goToSection('signUp')">
@@ -42,15 +38,14 @@
                 <input class="field" type="email" id="email" name="email" placeholder="ایمیل">
                 <input class="field" type="password" id="pass" name="pass" placeholder="رمز عبور">
                 <input class="field" type="password" id="pass-repeat" name="pass2" placeholder="تکرار رمز عبور">
-
                 <br>
-                <input style="display:block;float: right;" type="checkbox" id="accept-terms" name="terms">
-                <label style="color: #73A1C2;float: right" for="accept-terms">قوانین و شرایط را میپذیرم</label>
+                <input style="display:inline-block;float: right;" type="checkbox" id="accept-terms" name="terms">
+                <label id="accept-terms-text" for="accept-terms">قوانین و شرایط را میپذیرم</label>
                 <input id="signUpButton" href="#register" type="submit" value="ثبت نام">
             </form>
             <div class="alert" style="display: none">
                 <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-                <span id="error-message" style="display: inline; float: right;margin-right: 0.5vw">متن خطا</span>
+                <span id="error-message">متن خطا</span>
             </div>
         </div>
         <div id="signInSection" class="field-container" style="display: none">
