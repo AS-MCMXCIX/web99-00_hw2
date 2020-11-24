@@ -10,12 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db86919e-6124-4cdf-ac2d-b6a30ba70d4f" name="Default Changelist" comment="fix most things. ⸮⸮last commit??">
-      <change afterPath="$PROJECT_DIR$/css/buttons-hw2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/supinForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Codes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Codes.iml" afterDir="false" />
+    <list default="true" id="db86919e-6124-4cdf-ac2d-b6a30ba70d4f" name="Default Changelist" comment="change signup section completely.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +70,7 @@
       <workItem from="1606059884404" duration="34012000" />
       <workItem from="1606097642042" duration="23000" />
       <workItem from="1606154378877" duration="24787000" />
-      <workItem from="1606239207781" duration="4920000" />
+      <workItem from="1606239207781" duration="5146000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1605905846822</created>
@@ -139,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606097127196</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change signup section completely.">
+      <created>1606244205071</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606244205071</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +168,8 @@
     <MESSAGE value="add signup and signIn validation" />
     <MESSAGE value="fix styles" />
     <MESSAGE value="fix most things. ⸮⸮last commit??" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix most things. ⸮⸮last commit??" />
+    <MESSAGE value="change signup section completely." />
+    <option name="LAST_COMMIT_MESSAGE" value="change signup section completely." />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606082907009">
@@ -192,10 +196,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605894883452" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1606097133469">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1606244211082">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606097133469" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606244211082" />
     <state x="587" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606060722831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
