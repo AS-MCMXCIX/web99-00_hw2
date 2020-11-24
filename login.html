@@ -34,13 +34,13 @@
     </div>
 </div>
 <div class="supInFormContainer">
-    <div class="d-block" style="width: 33%;height: 100%;background-color: white;float: right">
-        <div class="btn-group btn-group-lg btn-group-toggle w-100" data-toggle="buttons"
+    <div class="d-block inner-form-container">
+        <div id="supin-buttons" class="btn-group btn-group-lg btn-group-toggle w-100" data-toggle="buttons"
              style="background-color: white">
-            <label class="btn btn-b-w-b rounded-0 w-100">
+            <label class="btn btn-b-w-b rounded-0 w-100" for="signin-section-button">
                 <input type="radio" name="options" id="signin-section-button" onchange="signupRadioOnChange()">ورود
             </label>
-            <label class="btn btn-b-w-b rounded-0 w-100 active">
+            <label class="btn btn-b-w-b rounded-0 w-100 active" for="signup-section-button">
                 <input type="radio" name="options" id="signup-section-button" onchange="signupRadioOnChange()">ثبت
                 نام
             </label>
@@ -70,7 +70,7 @@
                 </div>
                 <br>
                 <div class="d-flex justify-content-center" style="background-color: blue;width: 100%">
-                    <button type="submit" class="btn btn-primary w-100" style="font-family: Sahel"
+                    <button id="signup-button" type="submit" class="btn btn-primary w-100" style="font-family: Sahel"
                             onclick="return validateSignup()">ثبت نام
                     </button>
                 </div>
@@ -99,7 +99,7 @@
                 </div>
                 <br>
                 <div class="d-flex justify-content-center" style="background-color: blue;width: 100%">
-                    <button type="submit" class="btn btn-primary w-100" style="font-family: Sahel"
+                    <button id="signin-button" type="submit" class="btn btn-primary w-100" style="font-family: Sahel"
                             onclick="return validateSignIn()">ورود
                     </button>
                 </div>
