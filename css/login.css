@@ -133,51 +133,6 @@
     background-color: #D1E4F3;
 }
 
-.alert {
-    margin-top: 2vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: #E8EFF7; /* Red */
-    padding: 1vh 0 1vh 0.5vw;
-    color: #73A1C2;
-    width: 100%;
-    border-width: 0 1vw 0 0;
-    border-style: solid;
-    border-color: #D1E4F3;
-    box-sizing: border-box;
-    -webkit-animation: fadeinout .5s linear forwards;
-    animation: fadeout .5s linear forwards;
-    opacity: 0;
-}
-
-@keyframes fadeout {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.close-btn {
-    /*margin-left: 15px;*/
-    width: 1.5vw;
-    height: 1.5vw;
-    line-height: 1.5vw;
-    color: white;
-    background-color: #73A1C2;
-    font-weight: bold;
-    float: left;
-    font-size: 1.3vw;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 50%;
-}
-
-.close-btn:hover {
-    color: black;
-}
-
 .supInForm {
     text-align: center;
     height: 100%;

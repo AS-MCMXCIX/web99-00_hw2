@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
+    <link href='https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/buttons-hw2.css">
+    <link rel="stylesheet" href="css/supinForm.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
@@ -25,73 +34,146 @@
     </div>
 </div>
 <div class="supInFormContainer">
-    <div class="supInForm">
-        <div style="position: absolute;text-align: center;background-color: gray;width: 100%;height: 12%">
-            <button id="signIn" onclick="goToSection('signIn')">ورود
-            </button>
-            <button id="signUp" class="active" onclick="goToSection('signUp')">
-                ثبت نام
-            </button>
+    <div class="d-block" style="width: 33%;height: 100%;background-color: white;float: right">
+        <div class="btn-group btn-group-lg btn-group-toggle w-100" data-toggle="buttons"
+             style="background-color: white">
+            <label class="btn btn-b-w-b rounded-0 w-100">
+                <input type="radio" name="options" id="signin-section-button" onchange="signupRadioOnChange()">ورود
+            </label>
+            <label class="btn btn-b-w-b rounded-0 w-100 active">
+                <input type="radio" name="options" id="signup-section-button" onchange="signupRadioOnChange()">ثبت
+                نام
+            </label>
         </div>
-        <div id="signupSection" class="field-container">
-            <form id="signupForm" onsubmit="return validateSignup()">
-                <input class="field" type="email" id="email" name="email" placeholder="ایمیل">
-                <input class="field" type="password" id="pass" name="pass" placeholder="رمز عبور">
-                <input class="field" type="password" id="pass-repeat" name="pass2" placeholder="تکرار رمز عبور">
+        <div class="d-flex justify-content-center" style="background-color: white">
+            <form style="direction: rtl;" class="w-75" id="signup-form">
                 <br>
-                <input style="display:inline-block;float: right;" type="checkbox" id="accept-terms" name="terms">
-                <label id="accept-terms-text" for="accept-terms">قوانین و شرایط را میپذیرم</label>
-                <input id="signUpButton" href="#register" type="submit" value="ثبت نام">
-            </form>
-            <div class="alert" style="display: none">
-                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-                <span id="error-message">متن خطا</span>
-            </div>
-        </div>
-        <div id="signInSection" class="field-container" style="display: none">
-            <form id="signInForm" onsubmit="return validateSignIn()">
-                <input class="field" type="email" id="sin_email" name="email" placeholder="ایمیل">
-                <input class="field" type="password" id="sin_pass" name="pass" placeholder="رمز عبور">
+                <div class="form-group">
+                    <input type="email" class="form-control form-input-fa" id="signup-email-input"
+                           aria-describedby="emailHelp"
+                           placeholder="ایمیل">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-input-fa" id="signup-pass-input"
+                           placeholder="رمز عبور">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-input-fa" id="signup-repass-input"
+                           placeholder="تکرار رمز عبور">
+                </div>
+                <div class="form-group form-check float-right">
+                    <input type="checkbox" class="form-check-input" id="accept-terms">
+                    <label class="form-check-label" style="margin-right: 1.25rem;font-family: Sahel;color: #73A1C2"
+                           for="accept-terms">قوانین
+                        و شرایط را می
+                        پذیرم</label>
+                </div>
                 <br>
-                <input id="signInButton" href="#login" type="submit" value="ورود">
+                <div class="d-flex justify-content-center" style="background-color: blue;width: 100%">
+                    <button type="submit" class="btn btn-primary w-100" style="font-family: Sahel"
+                            onclick="return validateSignup()">ثبت نام
+                    </button>
+                </div>
+
+                <div id="alert-sup" class="alert alert-primary fade d-flex"
+                     style="text-align: right; border-right-width: 1rem; margin-top: 0.8rem;padding: 0.3rem 0.5rem;"
+                     role="alert">
+                    <label id="error-message-sup"
+                           style="margin-left: auto;font-family: Sahel;float: right;background-color: transparent">لطفا
+                        ایمیل معتبر وارد کنید.</label>
+                    <button type="button" class="btn-circle"
+                            aria-label="Close" id="alert-sup-close"><i class="fa fa-times"></i>
+                    </button>
+                </div>
             </form>
-            <div class="alert" style="display: none">
-                <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
-                <span id="error-message2" style="display: inline; float: right;margin-right: 0.5vw">متن خطا</span>
-            </div>
+            <form style="direction: rtl;display: none;" class="w-75" id="signin-form">
+                <br>
+                <div class="form-group">
+                    <input type="email" class="form-control form-input-fa" id="signin-email-input"
+                           aria-describedby="emailHelp"
+                           placeholder="ایمیل">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-input-fa" id="signin-pass-input"
+                           placeholder="رمز عبور">
+                </div>
+                <br>
+                <div class="d-flex justify-content-center" style="background-color: blue;width: 100%">
+                    <button type="submit" class="btn btn-primary w-100" style="font-family: Sahel"
+                            onclick="return validateSignIn()">ورود
+                    </button>
+                </div>
+
+                <div id="alert-sin" class="alert alert-primary fade d-flex"
+                     style="text-align: right; border-right-width: 1rem; margin-top: 0.8rem;padding: 0.3rem 0.5rem;"
+                     role="alert">
+                    <label id="error-message-sin"
+                           style="margin-left: auto;font-family: Sahel;float: right;background-color: transparent">لطفا
+                        ایمیل معتبر وارد کنید.</label>
+                    <button id="alert-sin-close" type="button" class="btn-circle"
+                            aria-label="Close"><i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 </body>
 <script>
-    let mail_field = document.getElementById('email');
-    let sin_mail = document.getElementById('sin_email');
-    let sin_pass = document.getElementById('sin_pass');
-    let pass_field = document.getElementById('pass');
-    let pass2_field = document.getElementById('pass-repeat');
+    let sin_mail = document.getElementById('signin-email-input');
+    let sin_pass = document.getElementById('signin-pass-input');
+    let sup_mail = document.getElementById('signup-email-input');
+    let sup_pass = document.getElementById('signup-pass-input');
+    let sup_repass = document.getElementById('signup-repass-input');
     let accept_terms = document.getElementById('accept-terms');
-    let error_message = document.getElementById('error-message');
-    let error_message2 = document.getElementById('error-message2');
+    let error_message_sup = document.getElementById('error-message-sup');
+    let error_message_sin = document.getElementById('error-message-sin');
 
-    let messages = ['please enter a password.', 'please repeat password.', 'please repeat password correctly.',
+    let messages_en = ['please enter a password.', 'please repeat password.', 'please repeat password correctly.',
         'please enter a valid email.', 'Welcome!', 'Wrong Password!', 'No Such User!', 'please accept terms.'];
+    let messages_fa = ['لطفاً رمز را وارد کنید.', 'لطفاً رمز را تکرار کنید.', 'لطفاً رمز را به درستی تکرار کنید.',
+        'لطفاً ایمیل معتبر وارد کنید.', 'حوش آمدید!', 'رمز اشتباه است!', 'چنین کاربری وجود ندارد!', 'لطفاً قوانین را بپذیرید.'];
 
-    let pass_state_messages = [messages[0], messages[1], messages[2]];
-    let db_signIn_state_messages = [messages[4], messages[5], messages[6]];
+    let pass_state_messages = [messages_fa[0], messages_fa[1], messages_fa[2]];
+    let db_signIn_state_messages = [messages_fa[4], messages_fa[5], messages_fa[6]];
+
+    function signupRadioOnChange() {
+        let active = document.getElementById('signin-section-button').checked;
+        if (active) {
+            document.getElementById('signin-form').style.display = 'block';
+            document.getElementById('signup-form').style.display = 'none';
+        } else {
+            document.getElementById('signin-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+        }
+    }
+
+    document.getElementById('alert-sup-close').onclick = function () {
+        document.getElementById('alert-sup').classList.remove('show');
+    };
+    document.getElementById('alert-sin-close').onclick = function () {
+        document.getElementById('alert-sin').classList.remove('show');
+    };
 
     function validateSignup() {
-        error_message.parentElement.style.display = 'flex';
-        if (!validateEmail(mail_field.value)) {
-            error_message.innerHTML = messages[3];
+        document.getElementById('alert-sup').classList.add('show');
+        if (!validateEmail(sup_mail.value)) {
+            error_message_sup.innerHTML = messages_fa[3];
         } else {
-            let res = validatePass(pass_field.value, pass2_field.value);
+            let res = validatePass(sup_pass.value, sup_repass.value);
 
             if (res !== -1) {
-                error_message.innerText = pass_state_messages[res];
+                error_message_sup.innerText = pass_state_messages[res];
             } else if (!accept_terms.checked) {
-                error_message.innerHTML = messages[7];
+                error_message_sup.innerHTML = messages_fa[7];
             } else {
-                error_message.parentElement.style.display = 'none';
+                document.getElementById('alert-sup').classList.remove('show');
                 return true;
             }
         }
@@ -99,16 +181,17 @@
     }
 
     function validateSignIn() {
-        error_message2.parentElement.style.display = 'flex';
+        document.getElementById('alert-sin').classList.add('show');
         if (validateEmail(sin_mail.value)) {
             let res = validateSignInBackend(sin_mail.value, sin_pass.value);
-            error_message2.innerHTML = db_signIn_state_messages[res];
+            error_message_sin.innerHTML = db_signIn_state_messages[res];
             if (res === 0) {
+                document.getElementById('alert-sin').classList.remove('show');
                 return true;
             }
             return false;
         }
-        error_message2.innerHTML = messages[3];
+        error_message_sin.innerHTML = messages_fa[3];
         return false;
     }
 
@@ -157,24 +240,11 @@
     }
 
     function goToSection(s) {
-        let sin = document.getElementById('signIn');
-        let sup = document.getElementById('signUp');
-        switch (s) {
-            case 'signIn':
-                setInactiveButton(sup);
-                setActiveButton(sin);
-
-                document.getElementById('signInSection').style.display = 'block';
-                document.getElementById('signupSection').style.display = 'none';
-                break;
-            case 'signUp':
-                setInactiveButton(sin);
-                setActiveButton(sup);
-                document.getElementById('signInSection').style.display = 'none';
-                document.getElementById('signupSection').style.display = 'block';
-                break;
+        if (s === 'signUp'){
+            document.getElementById('signup-section-button').click();
+        } else{
+            document.getElementById('signin-section-button').click();
         }
-        activeSection = s;
     }
 
     function setActiveButton(btn) {
