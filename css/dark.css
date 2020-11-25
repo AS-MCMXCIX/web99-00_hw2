@@ -113,7 +113,7 @@
 }
 
 .botnav {
-    height: 10vh;
+    height: 10%;
     width: 100%;
     display: table;
     justify-content: center;
@@ -127,7 +127,6 @@
 /* Style the links inside the navigation bar */
 .botnav a {
     color: var(--botnav-a-color);
-    background-color: var(--botnav-a-background-color);
     text-align: center;
     vertical-align: middle;
     padding: 5px 5px;
@@ -158,7 +157,7 @@
 
 .topnav2 {
     background-color: var(--topnav2-background-color);
-    height: 13vh;
+    height: 13%;
 }
 
 .logo-span:before {
@@ -186,7 +185,7 @@
 }
 
 .page-background {
-    background-color: #222424;
+    background-color: white;
 }
 
 

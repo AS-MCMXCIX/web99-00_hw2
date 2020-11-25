@@ -42,6 +42,7 @@
 }
 
 #ranking-table-container{
+    font-family: Sahel;
     max-height: 90vh;
 }
 
@@ -67,7 +68,7 @@
 }
 
 .ranking-row:nth-child(odd) {
-    background-color: var(--row-bck-color-odd)!important;
+    background-color: var(--row-bck-color-odd);
 }
 
 .ranking-row:nth-child(even) {

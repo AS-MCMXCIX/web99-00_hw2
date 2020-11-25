@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href='https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/light.css">
     <link rel="stylesheet" href="css/cards-list-light.css">
     <link rel="stylesheet" href="css/ranking-list-light.css">
     <link rel="stylesheet" href="css/ranking-list-below-600px-light.css">
+    <link href='https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/switch-button.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
@@ -85,7 +85,7 @@
         <li style="font-size: 23px;">&emsp;حالت شب&emsp;&emsp;&emsp;&emsp;</li>
         <li>
             <label class="switch">
-                <input onclick="dark_mode()" type="checkbox">
+                <input onchange="dark_mode()" type="checkbox">
                 <span class="slider round"></span>
             </label>
         </li>
@@ -212,10 +212,11 @@
             console.log(theme[i].getAttribute('href'));
             if (theme[i].getAttribute('href') === 'css/' + light_styles[i]) {
                 theme[i].setAttribute('href', 'css/' + dark_styles[i]);
-            } else {
+            } else if(theme[i].getAttribute('href') === 'css/' + dark_styles[i]) {
                 theme[i].setAttribute('href', 'css/' + light_styles[i]);
             }
         }
+        console.log('here');
     }
 </script>
 </body>

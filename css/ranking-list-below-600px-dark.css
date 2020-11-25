@@ -24,10 +24,10 @@
 #ranking-layout-below-600px{
     position: absolute;
     display: none;
-    top: 13vh;
+    top: 13%;
     left: 10vw;
-    height: 70vh;
-    background-color: black;
+    height: 70%;
+    background-color: #0a53be;
 }
 #ranking-layout-below-600px button{
     font-family: Sahel;
@@ -46,7 +46,7 @@
     margin: 1vh auto;
     width: 80%;
     position: center;
-    background-color: var(--s-card-background-color);
+    background-color: #E8EFF7;
 }
 .s-card th {
     float: right;
