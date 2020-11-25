@@ -1,5 +1,5 @@
 :root {
-    --topnav2-background-color: gray;
+    --topnav2-background-color: #808080;
 
     --topnav-background-color: gray;
     --topnav-a-background-color: #a6f5ac;
@@ -156,8 +156,10 @@
 }
 
 .topnav2 {
+    position: absolute;
     background-color: var(--topnav2-background-color);
     height: 13%;
+    width: 100%;
 }
 
 .logo-span:before {

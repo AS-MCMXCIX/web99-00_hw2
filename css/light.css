@@ -156,8 +156,10 @@
 }
 
 .topnav2 {
+    position: absolute;
     background-color: var(--topnav2-background-color);
     height: 13%;
+    width: 100%;
 }
 
 .logo-span:before {
