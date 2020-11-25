@@ -23,9 +23,9 @@
 #ranking-layout-below-600px{
     position: absolute;
     display: none;
-    top: 13vh;
+    top: 13%;
     left: 10vw;
-    height: 70vh;
+    height: 70%;
     background-color: #0a53be;
 }
 #ranking-layout-below-600px button{
